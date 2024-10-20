@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Zfix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">A-Zfix</div>
+        <div class="auth-buttons">
+            <button>Sign Up</button>
+            <button>Login</button>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <h1>We make your issue our problem</h1>
+        <input type="text" id="problemInput" placeholder="Enter your problem" required>
+        <button id="enterButton" onclick="goToServicePage()">Enter</button>
+    </div>
+
+    <script>
+        function goToServicePage() {
+            const problem = document.getElementById('problemInput').value;
+            if (problem) {
+                // Store problem in localStorage
+                localStorage.setItem('problem', problem);
+                // Redirect to the service selection page
+                window.location.href = 'schedule-page.html';
+            } else {
+                alert("Please enter your problem.");
+            }
+        }
+    </script>
+
+</body>
+</html>

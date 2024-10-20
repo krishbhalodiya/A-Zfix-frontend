@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Zfix - Available Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">A-Zfix</div>
+    </div>
+
+    <div class="services-container">
+        <h1>Available Services</h1>
+
+        <table class="services-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A/C Repair</td>
+                    <td>Professional A/C repair and maintenance services.</td>
+                    <td><button onclick="goToFormPage('A/C Repair')">Select</button></td>
+                </tr>
+                <tr>
+                    <td>Plumbing Repair</td>
+                    <td>Expert plumbing services for all your needs.</td>
+                    <td><button onclick="goToFormPage('Plumbing Repair')">Select</button></td>
+                </tr>
+                <tr>
+                    <td>Electrical Repair</td>
+                    <td>Reliable electrical repair and installation services.</td>
+                    <td><button onclick="goToFormPage('Electrical Repair')">Select</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function goToFormPage(service) {
+            // Store the selected service in localStorage
+            localStorage.setItem('selectedService', service);
+            window.location.href = 'form-page.html'; // Redirect to the form page
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Zfix - Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">A-Zfix</div>
+    </div>
+
+    <div class="form-container">
+        <h2 class="form-title">Schedule Your Service</h2>
+
+        <div class="form-group">
+            <label for="address">Enter your address</label>
+            <input type="text" id="address" placeholder="1234 Main St, City, Country">
+        </div>
+
+        <div class="form-group">
+            <label for="date">Select a date</label>
+            <input type="date" id="date">
+        </div>
+
+        <div class="form-group">
+            <label for="time">Select a time of day</label>
+            <select id="time">
+                <option value="" disabled selected>Select Time</option>
+                <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                <option value="evening">Evening (4:00 PM - 8:00 PM)</option>
+            </select>
+        </div>
+
+        <button onclick="submitBooking()">Submit</button>
+    </div>
+
+    <script>
+        // Function to handle the booking submission
+        function submitBooking() {
+            const address = document.getElementById('address').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            if (address && date && time) {
+                // Optionally, you could store the booking details in localStorage
+                localStorage.setItem('address', address);
+                localStorage.setItem('date', date);
+                localStorage.setItem('time', time);
+                alert('Your service has been booked!');
+            } else {
+                alert('Please fill in all fields before submitting.');
+            }
+        }
+    </script>
+
+</body>
+</html>
